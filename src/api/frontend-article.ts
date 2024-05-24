@@ -134,7 +134,9 @@ export async function getItem(res: KoaContext) {
             if (user_id) {
                 result.like_status = result.likes && result.likes.includes(user_id)
             }
-            else { result.like_status = false }
+            else {
+                result.like_status = false
+            }
             result.likes = []
             result.content = replaceHtmlTag(result.content)
             result.html = replaceHtmlTag(result.html)

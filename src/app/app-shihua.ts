@@ -75,7 +75,9 @@ export async function shihua(res: KoaContext) {
                         if (cdn === 'qiniu') {
                             img = `${cdnDomain}app/${img_id}`
                         }
-                        else { img = `${domain}uploads/${img_id}` }
+                        else {
+                            img = `${domain}uploads/${img_id}`
+                        }
 
                         if (img && name) {
                             await ShiHuaM.create({
@@ -135,7 +137,9 @@ export async function shihua(res: KoaContext) {
             if (data.success) {
                 res.json({ code: 200, from: 'api', userid, ...data.data })
             }
-            else { res.json({ code: -200, userid, message: data.message || '读取数据失败' }) }
+            else {
+                res.json({ code: -200, userid, message: data.message || '读取数据失败' })
+            }
         }
     }
     catch (err: unknown) {

@@ -289,7 +289,9 @@ export async function getItem(res: KoaContext) {
         if (result) {
             json = { code: 200, data: result, message: 'success' }
         }
-        else { json = { code: -200, data: null, message: '请先登录, 或者数据错误' } }
+        else {
+            json = { code: -200, data: null, message: '请先登录, 或者数据错误' }
+        }
     }
     catch (err: unknown) {
         json = { code: -200, data: null, message: getErrorMessage(err) }
