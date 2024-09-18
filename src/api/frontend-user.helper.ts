@@ -1,10 +1,11 @@
 import type { Lists, ResData, User, UserCookies, UserModify } from '~/types'
+
 import { strLen } from '@lincy/utils'
 import axios from 'axios'
 import jwt from 'jsonwebtoken'
 import md5 from 'md5'
-import { md5Pre, mpappApiId, mpappSecret, secretClient as secret } from '../config'
 
+import { md5Pre, mpappApiId, mpappSecret, secretClient as secret } from '../config'
 import UserM from '../models/user'
 import { getErrorMessage, getNowTime } from '../utils'
 

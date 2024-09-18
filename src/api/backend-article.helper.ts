@@ -1,7 +1,8 @@
 import type { Article, ArticleInsert, ArticleModify, Lists, ResData } from '~/types'
-import hljs from 'highlight.js'
 
+import hljs from 'highlight.js'
 import markdownIt from 'markdown-it'
+
 import ArticleM from '../models/article'
 import CategoryM from '../models/category'
 import { getErrorMessage, getNowTime } from '../utils'
@@ -30,7 +31,9 @@ function marked(content: string) {
                 try {
                     return hljs.highlight(lang, str).value
                 }
-                catch (_error) {} // 捕获并忽略高亮过程中的错误
+                catch (error) {
+                    console.log(error)
+                } // 捕获并忽略高亮过程中的错误
             }
             return ''
         },
