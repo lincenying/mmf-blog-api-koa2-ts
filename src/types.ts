@@ -1,5 +1,4 @@
 import type { ParameterizedContext } from 'koa'
-import type { Document } from 'mongoose'
 
 export type KoaContext<Query = Objable> = ParameterizedContext<{ query: Query }, {
     decoded: any
@@ -95,7 +94,7 @@ export interface Comment {
 /**
  * 用户详情
  */
-export interface User extends Document {
+export interface User {
     _id?: string
     id?: string
     /** * 用户名 */

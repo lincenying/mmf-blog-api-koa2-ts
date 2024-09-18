@@ -1,7 +1,7 @@
+import type { Comment, Lists, ReqListQuery, ResData } from '~/types'
 import ArticleM from '../models/article'
 import CommentM from '../models/comment'
 import { getErrorMessage, getNowTime } from '../utils'
-import type { Comment, Lists, ReqListQuery, ResData } from '@/types'
 
 /**
  * 发布评论

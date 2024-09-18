@@ -9,9 +9,6 @@
    */
   "scss.lint.unknownAtRules": "ignore",
 
-  // Enable the flat config support
-  "eslint.experimental.useFlatConfig": true,
-
   // Disable the default formatter
   "editor.formatOnSave": false,
 
@@ -49,6 +46,18 @@
     "markdown",
     "json",
     "jsonc",
-    "yaml"
+    "yaml",
+    "toml",
+    "xml",
+    "svg",
+    "gql",
+    "graphql",
+    "astro",
+    "svelte",
+    "css",
+    "less",
+    "scss",
+    "pcss",
+    "postcss"
   ]
 }

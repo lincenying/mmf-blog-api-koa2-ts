@@ -1,5 +1,5 @@
+import type { KoaContext, ResData } from '~/types'
 import fs from 'node:fs'
-import type { KoaContext, ResData } from '@/types'
 
 export interface AppVersion {
     version: number

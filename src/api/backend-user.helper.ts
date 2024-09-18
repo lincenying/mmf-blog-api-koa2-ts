@@ -1,11 +1,11 @@
+import type { Lists, ResData, User, UserModify } from '~/types'
 import fs from 'node:fs'
-import md5 from 'md5'
 import jwt from 'jsonwebtoken'
 
-import { fsExistsSync, getErrorMessage, getNowTime } from '../utils'
+import md5 from 'md5'
 import { md5Pre, secretServer as secret } from '../config'
 import AdminM from '../models/admin'
-import type { Lists, ResData, User, UserModify } from '@/types'
+import { fsExistsSync, getErrorMessage, getNowTime } from '../utils'
 
 /**
  * 获取管理员列表

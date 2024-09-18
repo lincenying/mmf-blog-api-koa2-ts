@@ -1,5 +1,5 @@
+import type { CategoryInsert, CategoryModify, KoaContext } from '~/types'
 import * as helper from './backend-category.helper'
-import type { CategoryInsert, CategoryModify, KoaContext } from '@/types'
 
 /**
  * 管理时, 获取分类列表

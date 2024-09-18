@@ -1,10 +1,10 @@
-import markdownIt from 'markdown-it'
+import type { Article, ArticleInsert, ArticleModify, Lists, ResData } from '~/types'
 import hljs from 'highlight.js'
 
+import markdownIt from 'markdown-it'
 import ArticleM from '../models/article'
 import CategoryM from '../models/category'
 import { getErrorMessage, getNowTime } from '../utils'
-import type { Article, ArticleInsert, ArticleModify, Lists, ResData } from '@/types'
 
 /**
  * 将 Markdown 格式的内容转换成 HTML 格式，并生成目录（TOC）。
@@ -30,7 +30,7 @@ function marked(content: string) {
                 try {
                     return hljs.highlight(lang, str).value
                 }
-                catch (error) {} // 捕获并忽略高亮过程中的错误
+                catch (_error) {} // 捕获并忽略高亮过程中的错误
             }
             return ''
         },

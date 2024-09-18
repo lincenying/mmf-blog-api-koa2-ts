@@ -1,9 +1,9 @@
 import KoaRouter from '@koa/router'
 
 import * as backendUser from '../api/backend-user'
+import app from './app'
 import backend from './backend'
 import frontend from './frontend'
-import app from './app'
 
 const router = new KoaRouter()
 // 添加管理员

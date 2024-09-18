@@ -1,13 +1,13 @@
-import fs from 'node:fs'
-import base64Img from 'base64-img'
-import pkg from 'baidu-aip-sdk'
-
 import type { Context } from 'koa'
+import type { KoaContext, Lists, ResData, ShiHua } from '~/types'
+import fs from 'node:fs'
+
+import pkg from 'baidu-aip-sdk'
+import base64Img from 'base64-img'
 import { cdnDomain, domain, shihua as shihuaConfig } from '../config'
-import { checkJWT } from '../utils/check-jwt'
 import ShiHuaM from '../models/shihua'
 import { getErrorMessage, getNowTime } from '../utils'
-import type { KoaContext, Lists, ResData, ShiHua } from '@/types'
+import { checkJWT } from '../utils/check-jwt'
 
 const { imageClassify: AipImageClassifyClient } = pkg
 

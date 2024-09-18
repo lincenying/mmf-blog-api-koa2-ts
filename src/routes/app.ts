@@ -1,11 +1,11 @@
 import KoaRouter from '@koa/router'
 
 import multer from '@lincy/multer'
+import * as appDouYin from '../app/app-douyin'
 import * as appPublic from '../app/app-public'
+import * as appQiniu from '../app/app-qiniu'
 import * as appShihua from '../app/app-shihua'
 import * as appWeiBo from '../app/app-weibo'
-import * as appQiniu from '../app/app-qiniu'
-import * as appDouYin from '../app/app-douyin'
 
 import cors from '../middlewares/cors'
 import isUser from '../middlewares/user'
@@ -13,10 +13,10 @@ import isUser from '../middlewares/user'
 const router = new KoaRouter()
 
 const storage = multer.diskStorage({
-    destination(req, file, cb) {
+    destination(_req, _file, cb) {
         cb(null, './uploads')
     },
-    filename(req, file, cb) {
+    filename(_req, file, cb) {
         const ext = file.originalname.split('.').pop()
         cb(null, `shihua-${Date.now()}.${ext}`)
     },

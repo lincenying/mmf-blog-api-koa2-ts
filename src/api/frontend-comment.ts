@@ -1,5 +1,5 @@
+import type { KoaContext, ReqListQuery } from '~/types'
 import * as helper from './frontend-comment.helper'
-import type { KoaContext, ReqListQuery } from '@/types'
 
 /**
  * 发布评论

@@ -1,5 +1,5 @@
+import type { ArticleInsert, ArticleModify, KoaContext } from '~/types'
 import * as helper from './backend-article.helper'
-import type { ArticleInsert, ArticleModify, KoaContext } from '@/types'
 
 /**
  * 获取文章列表的异步函数。

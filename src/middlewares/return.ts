@@ -1,5 +1,5 @@
 import type { Next } from 'koa'
-import type { KoaContext } from '@/types'
+import type { KoaContext } from '~/types'
 
 export default async (ctx: KoaContext, next: Next) => {
     function errFunc<T>(data: T, message: string, other: Objable = {}) {

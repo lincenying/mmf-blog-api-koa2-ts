@@ -1,7 +1,7 @@
-import buffer from 'node:buffer'
 import type { Next } from 'koa'
+import type { KoaContext } from '~/types'
+import buffer from 'node:buffer'
 import check from './check'
-import type { KoaContext } from '@/types'
 
 export default async (ctx: KoaContext, next: Next) => {
     const token = (ctx.cookies.get('user') || ctx.header.user) as string

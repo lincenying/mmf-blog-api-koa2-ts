@@ -1,5 +1,5 @@
+import type { KoaContext } from '~/types'
 import * as helper from './backend-user.helper'
-import type { KoaContext } from '@/types'
 
 /**
  * 获取管理员列表

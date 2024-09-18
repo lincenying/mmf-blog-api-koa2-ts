@@ -1,5 +1,5 @@
+import type { KoaContext, ReqListQuery } from '~/types'
 import * as helper from './frontend-article.helper'
-import type { KoaContext, ReqListQuery } from '@/types'
 
 /**
  * 前台浏览时, 获取文章列表
