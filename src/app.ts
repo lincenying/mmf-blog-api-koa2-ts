@@ -26,7 +26,7 @@ app.use(convert(json()))
 app.use(convert(logger()))
 app.use(convert(koaStatic(path.join(__dirname, 'public'))))
 
-app.use(views(path.join(__dirname, 'views'), { extension: 'ejs' }))
+app.use(views(path.join(__dirname, '../views'), { extension: 'ejs' }))
 
 app.use(MidReturn)
 
