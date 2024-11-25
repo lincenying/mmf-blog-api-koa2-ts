@@ -95,7 +95,7 @@ export async function insert(res: KoaContext) {
 
 export async function getList(res: KoaContext) {
     let json: ResData<Nullable<Lists<DouYin[]>>>
-    const reqQuery = res.query as { user_id: string; limit?: string | number; page?: string | number }
+    const reqQuery = res.query as { user_id: string, limit?: string | number, page?: string | number }
 
     let { limit, page } = reqQuery
     const user_id = reqQuery.user_id
@@ -103,7 +103,7 @@ export async function getList(res: KoaContext) {
     page = Number(page) || 1
     limit = Number(limit) || 10
 
-    const payload: { is_delete: number; user_id?: string } = { is_delete: 0 }
+    const payload: { is_delete: number, user_id?: string } = { is_delete: 0 }
     const skip = (page - 1) * limit
     const sort = '-aweme_id'
 

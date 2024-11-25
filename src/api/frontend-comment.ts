@@ -7,7 +7,7 @@ import * as helper from './frontend-comment.helper'
  * @returns 返回一个Promise，解析为处理后的响应数据。
  */
 export async function insert(res: KoaContext) {
-    const reqBody = res.request.body as { id: string; content: string }
+    const reqBody = res.request.body as { id: string, content: string }
 
     const userid = (res.cookies.get('userid') || res.header.userid) as string
 

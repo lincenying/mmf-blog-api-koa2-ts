@@ -35,7 +35,7 @@ function getBase64(img_id: string, cdn: string): Promise<string> {
 }
 
 export async function shihua(res: KoaContext) {
-    const reqQuery = res.query as { id: string; cdn: string }
+    const reqQuery = res.query as { id: string, cdn: string }
 
     const {
         id: img_id,
@@ -154,7 +154,7 @@ export async function shihua(res: KoaContext) {
  */
 export async function getHistory(res: KoaContext) {
     let json: ResData<Nullable<Lists<ShiHua[]>>>
-    const reqQuery = res.query as { page?: number; limit?: number }
+    const reqQuery = res.query as { page?: number, limit?: number }
 
     const userid = (res.cookies.get('userid') || res.header.userid) as string
 

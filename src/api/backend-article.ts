@@ -7,7 +7,7 @@ import * as helper from './backend-article.helper'
  * @returns 返回一个Promise，解析为处理后的响应数据。
  */
 export async function getList(res: KoaContext) {
-    const reqQuery = res.query as { page: string; limit: string; sort: string }
+    const reqQuery = res.query as { page: string, limit: string, sort: string }
 
     res.json(await helper.getList(reqQuery))
 }

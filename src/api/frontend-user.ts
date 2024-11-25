@@ -7,7 +7,7 @@ import * as helper from './frontend-user.helper'
  * @returns 返回一个Promise，解析为处理后的响应数据。
  */
 export async function getList(res: KoaContext) {
-    const reqQuery = res.query as { page?: number; limit?: number }
+    const reqQuery = res.query as { page?: number, limit?: number }
 
     res.json(await helper.getList(reqQuery))
 }
@@ -18,7 +18,7 @@ export async function getList(res: KoaContext) {
  * @returns 返回一个Promise，解析为处理后的响应数据。
  */
 export async function login(res: KoaContext) {
-    const reqBody = res.body as { username: string; password: string }
+    const reqBody = res.body as { username: string, password: string }
 
     const json = await helper.login(reqBody)
 
@@ -47,7 +47,7 @@ export async function jscodeToSession(res: KoaContext) {
  * @returns 返回一个Promise，解析为处理后的响应数据。
  */
 export async function wxLogin(res: KoaContext) {
-    const reqBody = res.body as { nickName: string; wxSignature: string; avatar: string }
+    const reqBody = res.body as { nickName: string, wxSignature: string, avatar: string }
 
     res.json(await helper.wxLogin(reqBody))
 }
@@ -73,7 +73,7 @@ export function logout(res: KoaContext) {
  * @returns 返回一个Promise，解析为处理后的响应数据。
  */
 export async function insert(res: KoaContext) {
-    const reqBody = res.body as { email: string; password: string; username: string }
+    const reqBody = res.body as { email: string, password: string, username: string }
 
     res.json(await helper.insert(reqBody))
 }
@@ -97,7 +97,7 @@ export async function getItem(res: KoaContext) {
  * @returns 返回一个Promise，解析为处理后的响应数据。
  */
 export async function modify(res: KoaContext) {
-    const reqBody = res.body as { id: string; email: string; password: string; username: string }
+    const reqBody = res.body as { id: string, email: string, password: string, username: string }
 
     res.json(await helper.modify(reqBody))
 }
@@ -120,7 +120,7 @@ export async function account(res: KoaContext) {
  * @returns 返回一个Promise，解析为处理后的响应数据。
  */
 export async function password(res: KoaContext) {
-    const reqBody = res.body as { old_password: string; password: string }
+    const reqBody = res.body as { old_password: string, password: string }
 
     const user_id = (res.cookies.get('userid') || res.header.userid) as string
 

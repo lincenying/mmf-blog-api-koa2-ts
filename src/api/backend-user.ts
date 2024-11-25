@@ -7,7 +7,7 @@ import * as helper from './backend-user.helper'
  * @returns 返回一个Promise，解析为处理后的响应数据。
  */
 export async function getList(res: KoaContext) {
-    const reqQuery = res.query as { page?: number; limit?: number }
+    const reqQuery = res.query as { page?: number, limit?: number }
 
     res.json(await helper.getList(reqQuery))
 }
@@ -29,7 +29,7 @@ export async function getItem(res: KoaContext) {
  * @returns 返回一个Promise，解析为处理后的响应数据。
  */
 export async function login(res: KoaContext) {
-    const reqBody = res.request.body as { password: string; username: string }
+    const reqBody = res.request.body as { password: string, username: string }
 
     const json = await helper.login(reqBody)
 
@@ -47,7 +47,7 @@ export async function login(res: KoaContext) {
  * @returns 返回一个Promise，解析为处理后的响应数据。
  */
 export async function insert(res: KoaContext) {
-    const reqBody = res.request.body as { email: string; password: string; username: string }
+    const reqBody = res.request.body as { email: string, password: string, username: string }
     const { email, password, username } = reqBody
     const message = await helper.insert(email, password, username)
     await res.render('admin-add', { message })
@@ -59,7 +59,7 @@ export async function insert(res: KoaContext) {
  * @returns 返回一个Promise，解析为处理后的响应数据。
  */
 export async function modify(res: KoaContext) {
-    const reqBody = res.request.body as { id: string; email: string; password: string; username: string }
+    const reqBody = res.request.body as { id: string, email: string, password: string, username: string }
 
     res.json(helper.modify(reqBody))
 }

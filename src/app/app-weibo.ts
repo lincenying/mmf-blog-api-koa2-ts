@@ -152,7 +152,7 @@ export async function get(res: KoaContext) {
  * @returns 返回一个Promise，解析为处理后的响应数据。
  */
 export async function user(res: KoaContext) {
-    const reqQuery = res.query as { containerid: string; since_id: string }
+    const reqQuery = res.query as { containerid: string, since_id: string }
 
     const containerid = reqQuery.containerid
     const since_id = reqQuery.since_id
@@ -222,7 +222,7 @@ export async function user(res: KoaContext) {
  */
 export async function card(res: KoaContext) {
     let json: CardReturn | ResData<string | null>
-    const reqQuery = res.query as { card_id: string; block_id: string; page: number | string }
+    const reqQuery = res.query as { card_id: string, block_id: string, page: number | string }
 
     const card_id = reqQuery.card_id
     const block_id = reqQuery.block_id
@@ -346,7 +346,7 @@ export async function video(res: KoaContext) {
  */
 export async function beautyVideo(res: KoaContext) {
     let json: WeiBoBlogReturn | ResData<string | null>
-    const reqQuery = res.query as { key: string; page: number | string }
+    const reqQuery = res.query as { key: string, page: number | string }
 
     const key = encodeURIComponent(reqQuery.key)
     const page = reqQuery.page || 1

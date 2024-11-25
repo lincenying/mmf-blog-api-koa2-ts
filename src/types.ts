@@ -184,6 +184,8 @@ export interface ReqListQuery {
     page?: number
     path?: string
     key?: string
+    /* 列表中不显示的字段 */
+    filter?: string
 }
 
 /**
