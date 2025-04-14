@@ -17,8 +17,8 @@ services:
       - webnet
 
   mongo:
-    image: mongo:3.6
-    restart: always
+    container_name: api-mongo-server-koa
+    image: mongo:4.0
     volumes:
       - /Users/lincenying/web/mongodb/data:/data/db
     ports:
