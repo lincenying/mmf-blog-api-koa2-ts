@@ -40,12 +40,12 @@ After the success of the administrator to add, will automatically generate the a
 
 ```bash
 # 构建镜像
-docker build -t lincenying/api-server-koa:1.25.0414 -f ./Dockerfile .
+docker build -t lincenying/api-server-koa:1.25.1029 -f ./Dockerfile .
 # 运行镜像
 docker run -d \
 -p 4008:4000 \
 --name container-api-server \
-lincenying/api-server-koa:1.25.0414
+lincenying/api-server-koa:1.25.1029
 # 进入容器
 docker exec -it container-api-server /bin/bash
 # 停止容器
